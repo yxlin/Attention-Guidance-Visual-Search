@@ -8,6 +8,6 @@ Copyright (c) Yi-Shin Lin
 Attention-Guidance-Visual-Search by Yi-Shin Lin, is licensed under a 
 [Creative Commons Attribution-NonCommercial 4.0 International License.](http://creativecommons.org/licenses/by-nc/4.0/)
 
-Based on a [work](https://github.com/yxlin/HBM-Approach-Visual-Search) at https://github.com/yxlin/HBM-Approach-Visual-Search
+Based on a [work](https://github.com/yxlin/Attention-Guidance-Visual-Search) at https://github.com/yxlin/Attention-Guidance-Visual-Search
 
 ![alt text](http://i.creativecommons.org/l/by-nc/4.0/88x31.png)
