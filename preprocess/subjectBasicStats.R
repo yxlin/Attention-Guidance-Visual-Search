@@ -1,7 +1,7 @@
 #-------------------------------------------------------
 # Author:      Yishin Lin
 # Date:        19 April, 2014
-# Description: Calculate participants' basic information
+# Description: Calculate participants' demongraphic information
 rm(list=ls())
 bg <- read.csv("./data/subjBkInfo.csv", header=TRUE)
 

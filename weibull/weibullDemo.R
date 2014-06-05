@@ -1,11 +1,12 @@
 # Disclaimer --------------------------------------------
 # Author: Yishin Lin
 # Date: 20 May, 2014
-# Description: 
+# Description: Draw the Weibull probability density plots 
+# in Figure 2
 rm(list=ls())
 library(plyr); library(ggplot2); library(grid); library(FAdist)
 
-# Generate parameters -------------------------------------------------
+# Generate parameters ---------------------------------------------
 n <- 3001
 x <- seq(0, 1.5, length=n)
 
@@ -21,7 +22,7 @@ shifty <- c(.1,.2)
 # and kurtosis.
 shapey <- c(1.3,2.3) 
 
-# Generate ys --------------------------------------------------------
+# Generate ys -----------------------------------------------------
 scale1y <- dweibull3(x,thres=.2, shape=1.3, 
                  scale=scaley[1]) 
 scale2y <- dweibull3(x,thres=.2, shape=1.3, 
@@ -35,7 +36,7 @@ shape1y <- dweibull3(x,thres=.2, shape=shapey[1],
 shape2y <- dweibull3(x,thres=.2, shape=shapey[2], 
                      scale=.32) 
 
-# Bind as a data frame ------------------------------------------------
+# Bind as a data frame --------------------------------------------
 x0 <- data.frame(x=rep(x, 6), 
                    density=c(scale1y,scale2y,
                              shift1y,shift2y,
@@ -43,7 +44,7 @@ x0 <- data.frame(x=rep(x, 6),
                    cond=rep(rep(c(1,2), each=n), 3),
                    para=rep(c("scale", "shift", "shape"), each=2*n))
 
-# Plot figures -------------------------------------------------------
+# Plot figures ----------------------------------------------------
 p <- ggplot(x0, aes(x=x, y=density, colour=factor(cond))) + 
   geom_line(size=2) + theme_bw() + facet_grid(.~para) +
   scale_x_continuous(name = "RT (s)") +
@@ -59,9 +60,9 @@ p <- ggplot(x0, aes(x=x, y=density, colour=factor(cond))) +
         strip.text.y = element_text(size=30, angle=90),
         legend.position=  "none")
 
-jpeg(filename = "./figures/weibull/weibullDemo.jpeg",
-     width = 1280, height = 1024, units = "px", pointsize = 8,
-     quality = 95, bg = "white")
+# jpeg(filename = "./figures/weibull/weibullDemo.jpeg",
+#      width = 1280, height = 1024, units = "px", pointsize = 8,
+#      quality = 95, bg = "white")
 p
-dev.off()
+# dev.off()
 
