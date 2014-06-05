@@ -1,8 +1,8 @@
 #-------------------------------------------------------
 # Author:      Yishin Lin
 # Date:        19 April, 2014
-# Description: Read E-Prime data files and aggregate all data files
-# as one R image 
+# Description: Read E-Prime data files and aggregate 
+# all data files as one R image 
 
 # Load Package  --------------------------------------------------
 loadedPackages <-c("plyr", "car", "ggplot2", "grid") 
@@ -11,7 +11,7 @@ suppressPackageStartupMessages(lapply(loadedPackages, require,
 rm(list=ls()); 
 source("./functions/cleanData2.R")
 
-# Testing Sequence ------------------------------------------------
+# Testing Sequence -----------------------------------------------
 # d43 321 
 # d44 231
 # d48 231
@@ -23,13 +23,10 @@ source("./functions/cleanData2.R")
 # d62 132
 # d60 213
 
-# Set-up Data Path-------------------------------------------------
-v1files <- paste0("./data/rawData/d", c(43,44,48,49,53,57,58,59,62,60),"/visit1/", "d", 
-                  c(43,44,48,49,53,57,58,59,62,60), "_1.txt")
-v2files <- paste0("./data//rawData/d", c(43,44,48,49,53,57,58,59,62,60),"/visit2/", "d",
-                  c(43,44,48,49,53,57,58,59,62,60), "_2.txt")
-v3files <- paste0("./data//rawData/d", c(43,44,48,49,53,57,58,59,62,60),"/visit3/", "d",
-                  c(43,44,48,49,53,57,58,59,62,60), "_3.txt")
+# Set-up Data Path------------------------------------------------
+v1files <- paste0("./data/rawData/d", c(43,44,48,49,53,57,58,59,62,60),"/visit1/", "d", c(43,44,48,49,53,57,58,59,62,60), "_1.txt")
+v2files <- paste0("./data//rawData/d", c(43,44,48,49,53,57,58,59,62,60),"/visit2/", "d",c(43,44,48,49,53,57,58,59,62,60), "_2.txt")
+v3files <- paste0("./data//rawData/d", c(43,44,48,49,53,57,58,59,62,60),"/visit3/", "d",c(43,44,48,49,53,57,58,59,62,60), "_3.txt")
 n <- length(v1files)
 
 testSeq <- matrix(c("bu","td","nm", "td","bu","nm", "td","bu","nm",
@@ -37,7 +34,7 @@ testSeq <- matrix(c("bu","td","nm", "td","bu","nm", "td","bu","nm",
                     "td","nm","bu", "bu","nm","td", "nm","bu","td",
                     "td", "nm", "bu"), ncol=3,byrow=T)
 
-# Load Data ---------------------------------------------------------
+# Load Data ------------------------------------------------------
 x0 <- NULL
 for(i in 1:n){
   df1 <- read.table(as.character(v1files[i]), skip=1, 
@@ -57,15 +54,15 @@ for(i in 1:n){
   x0 <- rbind(x0, df)
 }
 
-# Check Trial Numbers 1----------------------------------------------
+# Check Trial Numbers 1-------------------------------------------
 # Each participant should contribute 2016 trials in total
 ddply(x0, .(subj), summarise,
       N = length(rt))
 
-# Clearing-up 1------------------------------------------------------
+# Clearing-up 1--------------------------------------------------
 rm(list=setdiff( ls(), c("x0")))
 
-# Averaging Trials --------------------------------------------------
+# Averaging Trials ----------------------------------------------
 x1 <- subset(x0, rt >= 200 & rt <= 2000 & acc == 1); nrow(x1)/nrow(x0)
 avg <- ddply(x0, .(size,cond,subj,acc), .drop=FALSE, summarize, 
                    N = length(rt), 
@@ -85,6 +82,33 @@ names(avg1) <- c("size",  "cond",  "subj", "N", "mean",
 ddply(x0, .(subj, size, cond), summarise, N = length(rt))
 avg1[avg1$cc < 70,]  # Check The Condition with Accuracy less then 70%
 
-# Clearing-up 2 and Save Data----------------------------------------
+# Clearing-up 2 and Save Data-------------------------------------
 rm(list=setdiff( ls(), c("x1","x0","avg1")))
-#save(x0, x1, avg1, file='./data/bu_td_nm_rt.RData')
+
+# Priming correction ---------------------------------------------
+x1$cond <- factor(x1$cond, levels=c('nm','td','bu'))
+x1$slope <- x1$rt/x1$size
+avg1$cond <- factor(avg1$cond, levels=c('nm','td','bu'))
+avg1$sizeNames <- ifelse(avg1$size == 1, "Detection", "Search")
+
+tmp1 <- subset(avg1, size == 1 & cond=="nm", select="median")
+tmp2 <- subset(avg1, size == 1 & cond=="bu", select="median")
+primingEst <- mean(tmp2$median - tmp1$median)
+
+tmp1 <- subset(avg1, size == 1 & cond=="nm", select="cc")
+tmp2 <- subset(avg1, size == 1 & cond=="bu", select="cc")
+primingEst.cc <- mean(tmp1$cc - tmp2$cc)
+
+# Correct priming ---------------------------------------------
+tmp3 <- subset(avg1, size!=1&cond=="nm")
+tmp3$cmedian <- tmp3$median + primingEst
+tmp3$ccc <-tmp3$cc - primingEst.cc
+
+tmp4 <- subset(avg1, size!=1&cond!="nm")
+tmp4$cmedian <- tmp4$median  
+tmp4$ccc <- tmp4$cc  
+avg2 <- rbind(tmp3,tmp4)
+avg_size1 <- subset(avg1, size == 1)
+
+# Save data ------------------------------------------------------
+# save(x0, x1, avg1, avg2, avg_size1, file='./data/bu_td_nm_rt.RData')
