@@ -1,7 +1,7 @@
 Attention-Guidance-Visual-Search
 ==========================
 
-This manuscript is under preparation. Please inform us, if you find anything (codes or texts) here is useful for your work and wish to use it. We welcome any comments that help to improve the work. If you find any faults or mistakes we may make here, please drop us an email. 
+This manuscript is under review. Please inform us, if you find anything (codes or texts) here is useful for your work and wish to use it. We welcome any comments that help to improve the work. If you find any faults or mistakes we make here, please drop us an email. 
 
 Copyright (c) Yi-Shin Lin
 
