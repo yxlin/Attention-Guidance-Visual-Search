@@ -5,3 +5,4 @@ R/archive/*
 data/archive/*
 R/*.Rout
 figs/archive/*
+data/modelling_data/*
