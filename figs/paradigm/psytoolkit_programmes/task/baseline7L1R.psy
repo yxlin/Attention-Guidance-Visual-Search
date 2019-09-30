@@ -1,0 +1,283 @@
+options  			# This programme is modified from Dr. Gijsbert Stoet's visual search task 
+ # window  			# The drafting of first beta version started on 10th of Dec and was finished on 19th of December, 2011.
+ escape  			# 29th December, 2011. Change (1) preview duration from 600 ms to 500 ms at line 1401. 
+ centerzero 			# (2) V5 (@5). Add letter, 'B', in front of the cue letter. Also change the colour of png files from white to blue
+ bitmapdir bitmapssearch 	# Add additional 26 blue letter png files.
+ resolution 1152 864 		# This line is for cubicle desktop computer. 
+ vsync_off                      # Author: Yi-Shin Lin
+ cedrus                         
+ 
+bitmaps 			 
+ instructionPage		
+ prcFullsetCompleted		
+ takeABreak			 
+ lastOne
+ finish3Sections
+ finish5Sections
+ finish7Sections
+ A
+ B
+ C
+ D
+ E
+ F
+ G
+ H
+ I
+ J
+ K
+ L
+ M
+ N
+ O
+ P
+ Q
+ R
+ S
+ T
+ U
+ V
+ W
+ X
+ Y
+ Z
+ wa
+ wb
+ wc
+ wd
+ we
+ wf
+ wg
+ wh
+ wi
+ wj
+ wk
+ wl
+ wm
+ wn
+ wo
+ wp
+ wq
+ wr
+ ws
+ wt
+ wu
+ wv
+ ww
+ wx
+ wy
+ wz
+ empty
+ fixpoint
+ frame
+ targetOnTheLeftEr
+ targetOnTheRightEr
+ tooearly
+ toolate
+
+table baseline # This table is created in R
+
+task search
+  table baseline
+  if @4 != 0 					# If the ISI is non-zero, the target letter and fixation are presented separately.
+	show bitmap fixpoint 0 0 		# 1
+	delay 500 				# ----- Fixation is 500 ms, which is Posner and Boies's (1971) optimal performance duration.
+	show bitmap @5 0 -25 			# 2 @5 is the cue png always staying for 200 ms. An identical cue throughout the entire task.     
+	delay 200 				
+	clear 2 				# clear the cue png
+        show bitmap fixpoint 0 0
+	delay @4				# The cue-target duration is @4, defined at isiSet in R file. 
+  fi
+  cedrus clear                                  # clean any cedrus guess press before presenting the target set 
+  if @69 == 2 					# Preview search; this chunk has not been used.
+	draw off 				# preview set
+		show bitmap @9 @10 @11 		# 3; show bitmap [bitmapname] (xpos ypos)(width height)
+		show bitmap @12 @13 @14 	# 4
+		show bitmap @15 @16 @17 	# 5
+		show bitmap @18 @19 @20 	# 6
+		show bitmap @21 @22 @23 	# 7
+		show bitmap @24 @25 @26 	# 8
+		show bitmap @27 @28 @29 	# 9
+		show bitmap @30 @31 @32 	# 10
+		show bitmap @33 @34 @35 	# 11
+		show bitmap @36 @37 @38 	# 12
+	draw on
+	delay 500 				# ----- preview duration
+	draw off 				# target set  
+		show bitmap @39 @40 @41 	# 13; this is target. 
+		show bitmap @42 @43 @44 	# 14
+		show bitmap @45 @46 @47 	# 15
+		show bitmap @48 @49 @50 	# 16
+		show bitmap @51 @52 @53 	# 17
+		show bitmap @54 @55 @56 	# 18
+		show bitmap @57 @58 @59 	# 19
+		show bitmap @60 @61 @62 	# 20
+		show bitmap @63 @64 @65 	# 21
+		show bitmap @66 @67 @68 	# 22
+	        show bitmap fixpoint 0 0 	# 1
+	draw on
+  fi
+  if @69 == 1 					# @69 is the preview or non-preview switch. full-set search (non-preview) 
+	draw off 
+                show bitmap @9 @10 @11 		# 3; show bitmap [bitmapname] (xpos ypos)(width height)
+		show bitmap @12 @13 @14 	# 4
+		show bitmap @15 @16 @17 	# 5
+		show bitmap @18 @19 @20 	# 6
+		show bitmap @21 @22 @23 	# 7
+		show bitmap @24 @25 @26 	# 8
+		show bitmap @27 @28 @29 	# 9
+		show bitmap @30 @31 @32 	# 10
+		show bitmap @33 @34 @35 	# 11
+		show bitmap @36 @37 @38 	# 12
+                show bitmap @39 @40 @41 	# 13; this is the target. 
+		show bitmap @42 @43 @44 	# 14
+		show bitmap @45 @46 @47 	# 15
+		show bitmap @48 @49 @50 	# 16
+		show bitmap @51 @52 @53 	# 17
+		show bitmap @54 @55 @56 	# 18
+		show bitmap @57 @58 @59 	# 19
+		show bitmap @60 @61 @62 	# 20
+		show bitmap @63 @64 @65 	# 21
+		show bitmap @66 @67 @68 	# 22
+	        show bitmap fixpoint 0 0 	# 23
+	draw on
+  fi
+  cedrus readkey @2 10000 			# record RT. If longer than 10 seconds, terminate the trial.
+  set &x 0 					# this means, there was no error. Note that the variable named as 'x' in c file.
+  if STATUS == 2 				# pressed the wrong key. STATUS 2 means WRONG 
+     if @2 == 1					# The correct answer is right(press Cedrus 1)
+     	show bitmap targetOnTheRightEr 0 200 	# 24
+     fi
+     if @2 == 7					# The correct answer is left(press Cedrus 7). 
+     	show bitmap targetOnTheLeftEr 0 200 	# 24
+     fi
+     show bitmap frame  @40 @41  		# 25
+     show bitmap @39 @40 @41  			# 26 @39 also shows target letter. 
+     delay 1000
+     set &x 1
+     clear screen
+  fi
+  if STATUS == 4 				# press key too early. Show the warning. 
+      show bitmap tooearly 0 250 		# 24
+      show bitmap frame  @40 @41  		# 25
+      show bitmap @39 @40 @41  			# 26 
+      delay 1000 				#----- Press too early, wait for 1 s
+      set &x 1
+      clear screen
+  fi
+  if STATUS == 3 				# press key too early. Show the warning. 
+      show bitmap toolate 0 250 		# 24
+      show bitmap frame  @40 @41  		# 25
+      show bitmap @39 @40 @41  			# 26 
+      delay 1000
+      set &x 1
+      clear screen
+  fi
+  if &x == 0 					# Correct responses
+    clear screen
+  fi
+  delay 1000             # @1-counter(); @2-target position(left-5/right-6); @3-setsize; @4-ISI (50 or 400); @5-cueImg @6-uc/lc(always 1); @7-congr (always 1); @8-competing (always 0)
+  save BLOCKNAME @1 @2 @3 @4 @5 @6 @7 @8 @69 KEY STATUS EXTRT 	# @69-baseline/preview; KEY-which key 5/6 pressed; STATUS-x/o; EXTRT-rt from cedrus
+ 
+#----------------------------------------------------------------------
+# blocks
+# ---------------------------------------------------------------------
+
+block prc  	 
+  pager instructionPage	   
+  delay 1500
+  tasklist				 		
+    search 12 fixed  
+  end
+  system R CMD BATCH dataDump.r
+
+message prcFullsetCompleted
+
+block block1 		
+  delay 1500                    
+  tasklist 	  		 
+    search 60 fixed 	
+  end
+  system R CMD BATCH dataDump.r
+
+message takeABreak
+
+block block2 	
+  delay 1500
+  tasklist 
+    search 60 fixed 
+  end
+  system R CMD BATCH dataDump.r
+
+message takeABreak
+
+block block3 	
+  delay 1500
+  tasklist 
+    search 60 fixed 
+  end
+  system R CMD BATCH dataDump.r
+
+message finish3Sections
+
+block block4 	 
+  delay 1500
+  tasklist 
+    search 60 fixed 
+  end
+  system R CMD BATCH dataDump.r
+  
+message takeABreak
+
+block block5 	
+  delay 1500
+  tasklist 
+    search 60 fixed 
+  end
+
+message finish5Sections
+
+block block6 	 
+  delay 1500
+  tasklist 
+    search 60 fixed 
+  end
+  system R CMD BATCH dataDump.r
+  
+message takeABreak
+
+block block7 	
+  delay 1500
+  tasklist 
+    search 60 fixed 
+  end
+  system R CMD BATCH dataDump.r
+  
+message finish7Sections
+
+block block8 	
+  delay 1500
+  tasklist 
+    search 60 fixed 
+  end
+  system R CMD BATCH dataDump.r
+  
+message takeABreak
+
+block block9 		
+  delay 1500
+  tasklist 
+    search 60 fixed 
+  end
+  system R CMD BATCH dataDump.r
+  
+message lastOne
+
+block block10 	
+  delay 1500
+  tasklist 
+    search 60 fixed 
+  end
+  system R CMD BATCH dataDump.r
+  bitmap_from_file ./bitmapssearch/completed.png
+  wait_for_key
