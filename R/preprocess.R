@@ -256,4 +256,4 @@ allexp_wide <- rbind(e1_wide, e2_wide, e3_wide)
 sapply(allexp_wide[, -9], table)
 
 ## save(e1, e2, e3, allexp, file = "data/visual_search.RData)
-## Next averaging.R
+## Next average.R
