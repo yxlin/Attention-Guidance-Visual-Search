@@ -1,4 +1,6 @@
 .Rproj.user
 .Rhistory
 .RData
-
+R/archive/*
+data/archive/*
+R/*.Rout

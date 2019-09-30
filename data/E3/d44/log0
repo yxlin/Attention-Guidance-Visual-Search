@@ -1,0 +1,13 @@
+-------------------------------------------------------------------------------
+Start experiment date and time: 16 January 2015 11:32
+script: d44c.psy
+executable: ./d44c
+PsyToolkit: 1.2.7
+Resolution: 1152 864
+Fullscreen mode | Vsync: Yes | Realtime: No
+End experiment date and time:
+16 January 2015 12:38
+script:
+d44c.psy
+executable:
+./d44c

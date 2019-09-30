@@ -1,0 +1,26 @@
+-------------------------------------------------------------------------------
+Start experiment date and time: 14 January 2015 11:05
+script: d42v.psy
+executable: ./d42v
+PsyToolkit: 1.2.7
+Resolution: 1152 864
+Fullscreen mode | Vsync: Yes | Realtime: No
+End experiment date and time:
+14 January 2015 12:08
+script:
+d42v.psy
+executable:
+./d42v
+-------------------------------------------------------------------------------
+Start experiment date and time: 15 January 2015 11:02
+script: d42c.psy
+executable: ./d42c
+PsyToolkit: 1.2.7
+Resolution: 1152 864
+Fullscreen mode | Vsync: Yes | Realtime: No
+End experiment date and time:
+15 January 2015 12:02
+script:
+d42c.psy
+executable:
+./d42c

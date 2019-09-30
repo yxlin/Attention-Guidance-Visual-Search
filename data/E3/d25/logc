@@ -1,0 +1,13 @@
+-------------------------------------------------------------------------------
+Start experiment date and time: 10 December 2014 16:04
+script: d25c.psy
+executable: ./d25c
+PsyToolkit: 1.2.7
+Resolution: 1152 864
+Fullscreen mode | Vsync: Yes | Realtime: No
+End experiment date and time:
+10 December 2014 17:13
+script:
+d25c.psy
+executable:
+./d25c

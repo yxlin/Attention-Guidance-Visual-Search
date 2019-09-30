@@ -1,0 +1,13 @@
+-------------------------------------------------------------------------------
+Start experiment date and time: 28 December 2014 10:59
+script: d34v.psy
+executable: ./d34v
+PsyToolkit: 1.2.7
+Resolution: 1152 864
+Fullscreen mode | Vsync: Yes | Realtime: No
+End experiment date and time:
+28 December 2014 11:55
+script:
+d34v.psy
+executable:
+./d34v

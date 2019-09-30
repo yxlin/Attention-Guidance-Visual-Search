@@ -1,0 +1,36 @@
+-------------------------------------------------------------------------------
+Start experiment date and time: 06 December 2014 14:18
+script: d24c.psy
+executable: ./d24c
+PsyToolkit: 1.2.7
+Resolution: 1152 864
+Fullscreen mode | Vsync: Yes | Realtime: No
+End experiment date and time:
+06 December 2014 15:06
+script:
+d24c.psy
+executable:
+./d24c 84 per cell d24v - 120 per cell
+41 min
+09 sec
+35 ms
+-------------------------------------------------------------------------------
+Start experiment date and time: 07 December 2014 17:09
+script: d24v.psy
+executable: ./d24v
+PsyToolkit: 1.2.7
+Resolution: 1152 864
+Fullscreen mode | Vsync: Yes | Realtime: No
+-------------------------------------------------------------------------------
+Start experiment date and time: 07 December 2014 17:09
+script: d24v.psy
+executable: ./d24v
+PsyToolkit: 1.2.7
+Resolution: 1152 864
+Fullscreen mode | Vsync: Yes | Realtime: No
+End experiment date and time:
+07 December 2014 18:15
+script:
+d24v.psy
+executable:
+./d24v

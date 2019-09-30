@@ -1,0 +1,13 @@
+-------------------------------------------------------------------------------
+Start experiment date and time: 16 January 2015 15:15
+script: d46v.psy
+executable: ./d46v
+PsyToolkit: 1.2.7
+Resolution: 1152 864
+Fullscreen mode | Vsync: Yes | Realtime: No
+End experiment date and time:
+16 January 2015 16:10
+script:
+d46v.psy
+executable:
+./d46v

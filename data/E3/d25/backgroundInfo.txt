@@ -1,0 +1,878 @@
+ection 1
+
+
+1. What is your sex?
+
+Multiple-choice question.
+Response: Female
+
+2. What is your ethnicity?
+
+Multiple-choice question.
+Response: Other
+
+3. How old are you (in years)?
+
+Free-entry response.
+Response: 18
+
+4. What is your nationality/citizenship?
+
+Free-entry response.
+Response: British
+
+5. What is your status in the UK?
+
+Multiple-choice question.
+Response: UK-born citizen
+
+6. What is your status at the University of Birmingham?
+
+Multiple-choice question.
+Response: BSc Year 1 Undergraduate student
+
+7. Are you primarily right-handed or left-handed?
+
+Multiple-choice question. The numeric values for choices were not displayed -- only the associated text.
+Response: 1 Right-handed
+
+8. How tall are you? Please enter the number of centimeters (cm) or feet and inches.
+
+Free-entry response.
+Response: 165cm
+
+9. How much do you weigh in kilograms? (please enter just a number)
+
+Free-entry response.
+Response: 43kg
+Section 2
+
+
+1. Is English your first/native language?
+
+Multiple-choice question.
+Response: Yes
+
+2. If your first/native language is not English, what language is?
+
+Free-entry response. Participants may decline to answer this question.
+Response: [Decline to Answer]
+
+3. What other languages can you speak?
+
+Free-entry response. Participants may decline to answer this question.
+Response: Turkish
+
+4. What other languages can you write?
+
+Free-entry response. Participants may decline to answer this question.
+Response: Turkish
+
+5. What other languages can you read?
+
+Free-entry response. Participants may decline to answer this question.
+Response: Turkish
+
+6. Do you wear eyeglasses or contact lenses?
+
+Multiple-choice question.
+Response: No
+
+7. Please click 1.
+
+Multiple-choice question.
+Response: 1
+Section 3
+
+For each of the activities below, please indicate BOTH which had you prefer for the activity AND whether you ever use the other hand for the activity. (In other words, you may choose more than one response.)
+
+1. Writing
+
+Multiple-choice question.
+Response: Right hand
+
+2. Drawing
+
+Multiple-choice question.
+Response: Right hand
+
+3. Throwing
+
+Multiple-choice question.
+Response: Right hand
+
+4. Using scissors
+
+Multiple-choice question.
+Response: Right hand
+
+5. Using a toothbrush
+
+Multiple-choice question.
+Response: I sometimes use the other hand (yes/no)
+
+6. Using a knife (without a fork)
+
+Multiple-choice question.
+Response: Right hand
+
+7. Using a spoon
+
+Multiple-choice question.
+Response: Right hand
+
+8. Using a broom (upper hand)
+
+Multiple-choice question.
+Response: Right hand
+
+9. Striking a match
+
+Multiple-choice question.
+Response: Right hand
+
+10. Opening a box (holding the lid)
+
+Multiple-choice question.
+Response: Right hand
+Section 4
+
+- Questions were displayed in random order
+
+Instructions: This section has been removed. Please click the first option (1) for each of the 15 items.
+
+1. This question has been removed. Please click the first option. Thank you.
+
+Multiple-choice question.
+Response: 1 Disagree Strongly
+
+2. This question has been removed. Please click the first option.
+
+Multiple-choice question.
+Response: 1 Disagree Strongly
+
+3. This question has been removed. Please click the first option.
+
+Multiple-choice question.
+Response: 1 Disagree Strongly
+
+4. This question has been removed. Please click the first option.
+
+Multiple-choice question.
+Response: 1 Disagree Strongly
+
+5. This question has been removed. Please click the first option.
+
+Multiple-choice question.
+Response: 1 Disagree Strongly
+
+6. This question has been removed. Please click the first option.
+
+Multiple-choice question.
+Response: 1 Disagree Strongly
+
+7. This question has been removed. Please click the first option.
+
+Multiple-choice question.
+Response: 1 Disagree Strongly
+
+8. This question has been removed. Please click the first option.
+
+Multiple-choice question.
+Response: 1 Disagree Strongly
+
+9. This question has been removed. Please click the first option.
+
+Multiple-choice question.
+Response: 1 Disagree Strongly
+
+10. This question has been removed. Please click the first option.
+
+Multiple-choice question.
+Response: 1 Disagree Strongly
+
+11. This question has been removed. Please click the first option.
+
+Multiple-choice question.
+Response: 1 Disagree Strongly
+
+12. This question has been removed. Please click the first option.
+
+Multiple-choice question.
+Response: 1 Disagree Strongly
+
+13. This question has been removed. Please click the first option.
+
+Multiple-choice question.
+Response: 1 Disagree Strongly
+
+14. This question has been removed. Please click the first option.
+
+Multiple-choice question.
+Response: 1 Disagree Strongly
+
+15. This question has been removed. Please click the first option.
+
+Multiple-choice question.
+Response: 1 Disagree Strongly
+Section 5
+
+Please provide a response for of the following questions. If you are given the option to decline to answer a question, then declining to answer is considered a response.
+
+1. When you have put on weight, do you eat less than you usually do?
+
+Multiple-choice question. Participants may decline to answer this question.
+Response: Never
+
+2. Do you try to eat less at mealtimes than you would like to eat?
+
+Multiple-choice question. Participants may decline to answer this question.
+Response: Never
+
+3. How often do you refuse food or drink offered to you because you are concerned about your weight?
+
+Multiple-choice question. Participants may decline to answer this question.
+Response: Never
+
+4. Do you watch exactly what you eat?
+
+Multiple-choice question. Participants may decline to answer this question.
+Response: Never
+
+5. Do you deliberately eat foods that are slimming?
+
+Multiple-choice question. Participants may decline to answer this question.
+Response: Never
+
+6. When you have eaten too much, do you eat less than usual the following day?
+
+Multiple-choice question. Participants may decline to answer this question.
+Response: Never
+
+7. Do you deliberately eat less in order not to become heavier?
+
+Multiple-choice question. Participants may decline to answer this question.
+Response: Never
+
+8. How often do you try not to eat between meals because you are watching your weight?
+
+Multiple-choice question. Participants may decline to answer this question.
+Response: Never
+
+9. How often in the evenings do you try not to eat because you are watching your weight?
+
+Multiple-choice question. Participants may decline to answer this question.
+Response: Never
+
+10. Do you take your weight into account with what you eat?
+
+Multiple-choice question. Participants may decline to answer this question.
+Response: Never
+Section 6
+
+For each of the following situations, please rate how much fear/anxiety you would feel.
+
+1. Telephoning in public
+
+Multiple-choice question.
+Response: None
+
+2. Participating in small groups
+
+Multiple-choice question.
+Response: Mild
+
+3. Eating in public places
+
+Multiple-choice question.
+Response: None
+
+4. Drinking with others in public places
+
+Multiple-choice question.
+Response: None
+
+5. Talking to people in authority
+
+Multiple-choice question.
+Response: Mild
+
+6. Acting, performing, or giving a talk in front of an audience
+
+Multiple-choice question.
+Response: Moderate
+
+7. Going to a party
+
+Multiple-choice question.
+Response: None
+
+8. Working while being observed
+
+Multiple-choice question.
+Response: Mild
+
+9. Writing while being observed
+
+Multiple-choice question.
+Response: Moderate
+
+10. Calling someone you don't know very well
+
+Multiple-choice question.
+Response: Mild
+
+11. Talking with people you don't know very well
+
+Multiple-choice question.
+Response: None
+
+12. Meeting strangers
+
+Multiple-choice question.
+Response: None
+
+13. Urinating in a public bathroom
+
+Multiple-choice question.
+Response: Severe
+
+14. Entering a room when others are already seated
+
+Multiple-choice question.
+Response: Mild
+
+15. Being the centre of attention
+
+Multiple-choice question.
+Response: None
+
+16. Speaking up at a meeting
+
+Multiple-choice question.
+Response: Moderate
+
+17. Taking a written test
+
+Multiple-choice question.
+Response: Severe
+
+18. Expressing appropriate disagreement or disapproval to people you don't know very well
+
+Multiple-choice question.
+Response: Moderate
+
+19. Looking at people you don't know very well in the eyes
+
+Multiple-choice question.
+Response: None
+
+20. Giving a report to a group
+
+Multiple-choice question.
+Response: None
+
+21. Asking someone out on a date
+
+Multiple-choice question.
+Response: Mild
+
+22. Returning goods to a store where returns are normally accepted
+
+Multiple-choice question.
+Response: None
+
+23. Giving an average party
+
+Multiple-choice question.
+Response: None
+
+24. Resisting a high pressure sales person
+
+Multiple-choice question.
+Response: None
+Section 7
+
+- Questions were displayed in random order
+
+Instructions: The following questions concern various reasons or motivations people might have for trying to respond in nonprejudiced ways toward Black people. Some of the reasons reflect internal-personal motivations whereas others reflect more external-social motivations. Of course, people may be motivated for both internal and external reasons; we want to be clear that we are not evaluating you or your individual responses. All your responses will be completely confidential. We are simply trying to get an idea of the types of motivations that students in general have for responding in nonprejudiced ways. If we are to learn anything useful, it is important that you respond to each of the questions openly and honestly. Please give your responses on a scale of 1 (strongly disagree) to 9 (strongly agree).
+
+1. Because of today's PC (politically correct) standards, I try to appear nonprejudiced toward Black people.
+
+Multiple-choice question.
+Response: 1 Strongly Disagree
+
+2. I try to hide any negative thoughts about Black people in order to avoid negative reactions from others.
+
+Multiple-choice question.
+Response: 5
+
+3. If I acted prejudiced toward Black people, I would be concerned that others would be angry with me.
+
+Multiple-choice question.
+Response: 9 Strongly Agree
+
+4. I attempt to appear nonprejudiced toward Black people in order to avoid disapproval from others.
+
+Multiple-choice question.
+Response: 1 Strongly Disagree
+
+5. I try to act nonprejudiced toward Black people because of pressure from others.
+
+Multiple-choice question.
+Response: 1 Strongly Disagree
+
+6. I attempt to act in nonprejudiced ways toward Black people because it is personally important to me.
+
+Multiple-choice question.
+Response: 7
+
+7. According to my personal values, using stereotypes about Black people is OK.
+
+Multiple-choice question.
+Response: 1 Strongly Disagree
+
+8. I am personally motivated by my beliefs to be nonprejudiced toward Black people.
+
+Multiple-choice question.
+Response: 9 Strongly Agree
+
+9. Because of my personal values, I believe that using stereotypes about black people is wrong.
+
+Multiple-choice question.
+Response: 9 Strongly Agree
+
+10. Being non-prejudiced toward Black people is important to my self-concept.
+
+Multiple-choice question.
+Response: 9 Strongly Agree
+Section 8
+
+Below is a list of statements. Please read each statement very carefully and rate how strongly you agree or disagree with it by placing a tick in the relevant box. There are no right or wrong answers, or trick questions.
+
+1. Success is based on survival of the fittest; I am not concerned about the losers.
+
+Multiple-choice question. The numeric values for choices were not displayed -- only the associated text.
+Response: 2 Disagree Somewhat
+
+2. For me, what's right is whatever I can get away with.
+
+Multiple-choice question. The numeric values for choices were not displayed -- only the associated text.
+Response: 3 Agree Somewhat
+
+3. In today's world, I feel justified in doing anything I can get away with to succeed.
+
+Multiple-choice question. The numeric values for choices were not displayed -- only the associated text.
+Response: 3 Agree Somewhat
+
+4. My main purpose in life is getting as many goodies as I can.
+
+Multiple-choice question. The numeric values for choices were not displayed -- only the associated text.
+Response: 4 Agree Strongly
+
+5. Making a lot of money is my most important goal.
+
+Multiple-choice question. The numeric values for choices were not displayed -- only the associated text.
+Response: 2 Disagree Somewhat
+
+6. I let others worry about higher values; my main concern is with the bottom line.
+
+Multiple-choice question. The numeric values for choices were not displayed -- only the associated text.
+Response: 1 Disagree Strongly
+
+7. People who are stupid enough to get ripped off usually deserve it.
+
+Multiple-choice question. The numeric values for choices were not displayed -- only the associated text.
+Response: 1 Disagree Strongly
+
+8. Looking out for myself is my top priority.
+
+Multiple-choice question. The numeric values for choices were not displayed -- only the associated text.
+Response: 4 Agree Strongly
+
+9. I tell other people what they want to hear so that they will do what I want them to do.
+
+Multiple-choice question. The numeric values for choices were not displayed -- only the associated text.
+Response: 3 Agree Somewhat
+
+10. I would be upset if my success came at someone else's expense.
+
+Multiple-choice question. The numeric values for choices were not displayed -- only the associated text.
+Response: 4 Agree Strongly
+
+11. I often admire a really clever scam.
+
+Multiple-choice question. The numeric values for choices were not displayed -- only the associated text.
+Response: 4 Agree Strongly
+
+12. I make a point of trying not to hurt others in pursuit of my goals.
+
+Multiple-choice question. The numeric values for choices were not displayed -- only the associated text.
+Response: 4 Agree Strongly
+
+13. I enjoy manipulating other people's feelings.
+
+Multiple-choice question. The numeric values for choices were not displayed -- only the associated text.
+Response: 3 Agree Somewhat
+
+14. I feel bad if my words or actions cause someone else to feel emotional pain.
+
+Multiple-choice question. The numeric values for choices were not displayed -- only the associated text.
+Response: 4 Agree Strongly
+
+15. Even if I were trying very hard to sell something, I wouldn't lie about it.
+
+Multiple-choice question. The numeric values for choices were not displayed -- only the associated text.
+Response: 2 Disagree Somewhat
+
+16. Cheating is not justified because it is unfair to others.
+
+Multiple-choice question. The numeric values for choices were not displayed -- only the associated text.
+Response: 3 Agree Somewhat
+Section 9
+
+- Questions were displayed in random order
+
+Instructions: This survey is part of an investigation of general public opinion concerning a variety of social issues. You will probably find that you agree with some of the statements, and disagree with others, to varying extents. Please indicate your reaction to each statement by indicating your response from Very Strongly Disagree to Very Strongly Agree.
+
+1. The established authorities generally turn out to be right about things, while the radicals and protestors are usually just “loud mouths” showing off their ignorance.
+
+Multiple-choice question.
+Response: 1 Very Strongly Disagree
+
+2. Women should have to promise to obey their husbands when they get married.
+
+Multiple-choice question.
+Response: 1 Very Strongly Disagree
+
+3. Our country desperately needs a mighty leader who will do what has to be done to destroy the radical new ways and sinfulness that are ruining us.
+
+Multiple-choice question.
+Response: 1 Very Strongly Disagree
+
+4. Gays and lesbians are just as healthy and moral as anybody else.
+
+Multiple-choice question.
+Response: 8 Very Strongly Agree
+
+5. It is always better to trust the judgment of the proper authorities in government and religion than to listen to the noisy rabble-rousers in our society who are trying to create doubt in people’s minds.
+
+Multiple-choice question.
+Response: 2 Strongly Disagree
+
+6. Atheists and others who have rebelled against the established religions are no doubt every bit as good and virtuous as those who attend church regularly.
+
+Multiple-choice question.
+Response: 8 Very Strongly Agree
+
+7. The only way our country can get through the crisis ahead is to get back to our traditional values, put some tough leaders in power, and silence the troublemakers spreading bad ideas.
+
+Multiple-choice question.
+Response: 1 Very Strongly Disagree
+
+8. There is absolutely nothing wrong with nudist camps.
+
+Multiple-choice question.
+Response: 8 Very Strongly Agree
+
+9. Our country needs free thinkers who have the courage to defy traditional ways, even if this upsets many people.
+
+Multiple-choice question.
+Response: 8 Very Strongly Agree
+
+10. Our country will be destroyed someday if we do not smash the perversions eating away at our moral fibre and traditional beliefs.
+
+Multiple-choice question.
+Response: 5 Slightly Agree
+
+11. Everyone should have their own lifestyle, religious beliefs, and sexual preferences, even if it makes them different from everyone else.
+
+Multiple-choice question.
+Response: 8 Very Strongly Agree
+
+12. The “old-fashioned ways” and the “old-fashioned values” still show the best way to live.
+
+Multiple-choice question.
+Response: 5 Slightly Agree
+
+13. You have to admire those who challenged the law and the majority’s view by protesting for women’s abortion rights, for animal rights, or to abolish school prayer.
+
+Multiple-choice question.
+Response: 8 Very Strongly Agree
+
+14. What our country really needs is a strong, determined leader who will crush evil, and take us back to our true path.
+
+Multiple-choice question.
+Response: 7 Strongly Agree
+
+15. Some of the best people in our country are those who are challenging our government, criticizing religion, and ignoring the “normal way things are supposed to be done.”
+
+Multiple-choice question.
+Response: 6 Moderately Agree
+
+16. God’s laws about abortion, pornography and marriage must be strictly followed before it is too late, and those who break them must be strongly punished.
+
+Multiple-choice question.
+Response: 1 Very Strongly Disagree
+
+17. It would be best for everyone if the proper authorities censored magazines so that people could not get their hands on trashy and disgusting material.
+
+Multiple-choice question.
+Response: 1 Very Strongly Disagree
+
+18. There is nothing wrong with premarital sexual intercourse.
+
+Multiple-choice question.
+Response: 7 Strongly Agree
+
+19. Our country will be great if we honour the ways of our forefathers, do what the authorities tell us to do, and get rid of the “rotten apples” who are ruining everything.
+
+Multiple-choice question.
+Response: 1 Very Strongly Disagree
+
+20. There is no “ONE right way” to live life; everybody has to create their own way.
+
+Multiple-choice question.
+Response: 1 Very Strongly Disagree
+
+21. Gay and Lesbian people and feminists should be praised for being brave enough to defy “traditional family values".
+
+Multiple-choice question.
+Response: 7 Strongly Agree
+
+22. This country would work a lot better if certain groups of troublemakers would just shut up and accept their group’s traditional place in society.
+
+Multiple-choice question.
+Response: 1 Very Strongly Disagree
+
+23. There are many radical, immoral people in our country today, who are trying to ruin it for their own godless purposes, whom the authorities should put out of action.
+
+Multiple-choice question.
+Response: 5 Slightly Agree
+
+24. People should pay less attention to the Bible and the other old forms of religious guidance, and instead develop their own personal standards of what is moral and immoral.
+
+Multiple-choice question.
+Response: 5 Slightly Agree
+
+25. What our country needs most is discipline, with everyone following our leaders in unity.
+
+Multiple-choice question.
+Response: 1 Very Strongly Disagree
+
+26. It’s better to have trashy magazines and radical pamphlets in our communities than to let the government have the power to censor them.
+
+Multiple-choice question.
+Response: 7 Strongly Agree
+
+27. The facts on crime, sexual immorality, and the recent public disorders all show we have to crack down harder on deviant groups and troublemakers if we are going to save our moral standards, and preserve law and order.
+
+Multiple-choice question.
+Response: 3 Moderately Disagree
+
+28. A lot of our rules regarding modesty and sexual behaviour are just customs that are not necessarily any better or holier than those that other people follow.
+
+Multiple-choice question.
+Response: 8 Very Strongly Agree
+
+29. The situation in our country is getting so serious, the strongest methods would be justified if they eliminated the troublemakers and got us back to our true path.
+
+Multiple-choice question.
+Response: 2 Strongly Disagree
+
+30. A “woman’s place” should be wherever she wants to be. The days when women are submissive to their husbands and social conventions belong strictly in the past.
+
+Multiple-choice question.
+Response: 8 Very Strongly Agree
+
+31. It is wonderful that young people today have greater freedom to protest against things they don’t like, and to make their own “rules” to govern their behaviour.
+
+Multiple-choice question.
+Response: 8 Very Strongly Agree
+
+32. Once our government leaders give us the “go ahead,” it will be the duty of every citizen to help stomp out the rot that is poisoning our country from within.
+
+Multiple-choice question.
+Response: 6 Moderately Agree
+Section 10
+
+- Questions were displayed in random order
+
+Please respond to the following questions by either circling the number or ticking the box that best represents your opinion.
+
+1. In general, I'm glad to be a member of the social groups I belong to.
+
+Multiple-choice question.
+Response: 7 Agree Strongly
+
+2. Overall, I often feel that the social groups of which I am a member are not worthwhile.
+
+Multiple-choice question.
+Response: 1 Disagree Strongly
+
+3. I am a worthy member of the social groups I belong to.
+
+Multiple-choice question.
+Response: 7 Agree Strongly
+
+4. I feel I don’t have much to offer to the social groups I belong to.
+
+Multiple-choice question.
+Response: 1 Disagree Strongly
+
+5. In general, belonging to social groups is an important part of my self-image.
+
+Multiple-choice question.
+Response: 4 Neutral
+
+6. The social groups I belong to are an important reflection of who I am.
+
+Multiple-choice question.
+Response: 7 Agree Strongly
+
+7. Overall, my social groups are considered good by others.
+
+Multiple-choice question.
+Response: 7 Agree Strongly
+
+8. I am a cooperative participant in the social groups I belong to.
+
+Multiple-choice question.
+Response: 7 Agree Strongly
+
+9. I often feel I'm a useless member of my social groups.
+
+Multiple-choice question.
+Response: 1 Disagree Strongly
+
+10. I often regret that I belong to some of the social groups I do.
+
+Multiple-choice question.
+Response: 1 Disagree Strongly
+
+11. Most people consider my social groups, on the average, to be more ineffective than other social groups.
+
+Multiple-choice question.
+Response: 1 Disagree Strongly
+
+12. Overall, my group memberships have very little to do with how I feel about myself.
+
+Multiple-choice question.
+Response: 7 Agree Strongly
+
+13. I feel good about the social groups I belong to.
+
+Multiple-choice question.
+Response: 7 Agree Strongly
+
+14. In general, others respect the social groups that I am a member of.
+
+Multiple-choice question.
+Response: 7 Agree Strongly
+
+15. The social groups I belong to are unimportant to my sense of what kind of person I am.
+
+Multiple-choice question.
+Response: 6 Agree
+
+16. In general, others think that the social groups I am a member of are unworthy.
+
+Multiple-choice question.
+Response: 5 Agree Somewhat
+Section 11
+
+- Questions were displayed in random order
+
+Instructions: For each of the following statements or questions, please indicate the number from the scale that you think is most appropriate in describing you. (Carefully take note of the labels, or anchors, for the 1 to 7 scales, as they differ for each of the four items.)
+
+1. In general, I consider myself:
+
+Multiple-choice question.
+Response: 7 A very happy person
+
+2. Compared with most of my peers, I consider myself:
+
+Multiple-choice question.
+Response: 7 More happy
+
+3. Some people are generally very happy. They enjoy life regardless of what is going on, getting the most out of everything. To what extent does this characterization describe you?
+
+Multiple-choice question.
+Response: 5
+
+4. Some people are generally not very happy. Although they are not depressed, they never seem as happy as they might be. To what extent does this characterization describe you?
+
+Multiple-choice question.
+Response: 7 Not at all
+Section 12
+
+- Questions were displayed in random order
+
+Listed below are some characteristics that may describe a person: Caring Compassionate Fair Friendly Generous Hardworking Helpful Honest Kind The person with these characteristics could be you or it could be someone else. For a moment, visualise in your mind the kind of person who has these characteristics. Imagine how that person would think, feel, and act. When you have a clear image of what this person would be like, rate the extent to which you agree with each of the following statements.
+
+1. It would make me feel good to be a person who has these characteristics.
+
+Multiple-choice question.
+Response: 7 Agree Strongly
+
+2. Being someone who has these characteristics is an important part of who I am.
+
+Multiple-choice question.
+Response: 7 Agree Strongly
+
+3. A big part of my emotional well-being is tied up in having these characteristics.
+
+Multiple-choice question.
+Response: 5 Agree Somewhat
+
+4. I would be ashamed to be a person who has these characteristics.
+
+Multiple-choice question.
+Response: 1 Disagree Strongly
+
+5. Having these characteristics is not really important to me.
+
+Multiple-choice question.
+Response: 1 Disagree Strongly
+
+6. Having these characteristics is an important part of my sense of self.
+
+Multiple-choice question.
+Response: 7 Agree Strongly
+
+7. I strongly desire to have these characteristics.
+
+Multiple-choice question.
+Response: 7 Agree Strongly
+
+8. I often buy products that communicate the fact that I have these characteristics.
+
+Multiple-choice question.
+Response: 4 Neither Disagree nor Agree
+
+9. I often wear clothes that identify me as having these characteristics.
+
+Multiple-choice question.
+Response: 3 Disagree Somewhat
+
+10. The types of things I do in my spare time (e.g., hobbies) clearly identify me as having these characteristics.
+
+Multiple-choice question.
+Response: 5 Agree Somewhat
+
+11. The kinds of books and magazines that I read identify me as having these characteristics.
+
+Multiple-choice question.
+Response: 5 Agree Somewhat
+
+12. The fact that I have these characteristics is communicated to others by my membership in certain organizations.
+
+Multiple-choice question.
+Response: 7 Agree Strongly
+
+13. I am actively involved in activities that communicate to others that I have these characteristics.
+
+Multiple-choice question.
+Response: 6 Agree Moderately
+Email questions to rps.bham@googlemail.com
+

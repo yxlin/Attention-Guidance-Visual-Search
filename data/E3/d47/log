@@ -1,0 +1,26 @@
+-------------------------------------------------------------------------------
+Start experiment date and time: 22 January 2015 12:48
+script: d47c.psy
+executable: ./d47c
+PsyToolkit: 1.2.7
+Resolution: 1152 864
+Fullscreen mode | Vsync: Yes | Realtime: No
+End experiment date and time:
+22 January 2015 13:50
+script:
+d47c.psy
+executable:
+./d47c
+-------------------------------------------------------------------------------
+Start experiment date and time: 23 January 2015 11:33
+script: d47v.psy
+executable: ./d47v
+PsyToolkit: 1.2.7
+Resolution: 1152 864
+Fullscreen mode | Vsync: Yes | Realtime: No
+End experiment date and time:
+23 January 2015 12:30
+script:
+d47v.psy
+executable:
+./d47v

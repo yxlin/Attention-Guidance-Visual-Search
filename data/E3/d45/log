@@ -1,0 +1,27 @@
+-------------------------------------------------------------------------------
+Start experiment date and time: 16 January 2015 12:43
+script: d45c.psy
+executable: ./d45c
+PsyToolkit: 1.2.7
+Resolution: 1152 864
+Fullscreen mode | Vsync: Yes | Realtime: No
+End experiment date and time:
+16 January 2015 13:49
+script:
+d45c.psy
+executable:
+./d45c
+-------------------------------------------------------------------------------
+Start experiment date and time: 17 January 2015 09:38
+script: d45v.psy
+executable: ./d45v
+PsyToolkit: 1.2.7
+Resolution: 1152 864
+Fullscreen mode | Vsync: Yes | Realtime: No
+End experiment date and time:
+17 January 2015 10:39
+script:
+d45v.psy
+executable:
+./d45v
+

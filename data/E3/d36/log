@@ -1,0 +1,26 @@
+-------------------------------------------------------------------------------
+Start experiment date and time: 27 December 2014 15:16
+script: d36c.psy
+executable: ./d36c
+PsyToolkit: 1.2.7
+Resolution: 1152 864
+Fullscreen mode | Vsync: Yes | Realtime: No
+End experiment date and time:
+27 December 2014 16:18
+script:
+d36c.psy
+executable:
+./d36c
+-------------------------------------------------------------------------------
+Start experiment date and time: 28 December 2014 14:49
+script: d36v.psy
+executable: ./d36v
+PsyToolkit: 1.2.7
+Resolution: 1152 864
+Fullscreen mode | Vsync: Yes | Realtime: No
+End experiment date and time:
+28 December 2014 15:43
+script:
+d36v.psy
+executable:
+./d36v

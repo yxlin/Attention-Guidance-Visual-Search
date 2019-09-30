@@ -1,0 +1,26 @@
+-------------------------------------------------------------------------------
+Start experiment date and time: 12 December 2014 09:52
+script: d27c.psy
+executable: ./d27c
+PsyToolkit: 1.2.7
+Resolution: 1152 864
+Fullscreen mode | Vsync: Yes | Realtime: No
+End experiment date and time:
+12 December 2014 11:01
+script:
+d27c.psy
+executable:
+./d27c
+-------------------------------------------------------------------------------
+Start experiment date and time: 13 December 2014 08:44
+script: d27v.psy
+executable: ./d27v
+PsyToolkit: 1.2.7
+Resolution: 1152 864
+Fullscreen mode | Vsync: Yes | Realtime: No
+End experiment date and time:
+13 December 2014 09:44
+script:
+d27v.psy
+executable:
+./d27v
