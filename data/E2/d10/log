@@ -1,0 +1,26 @@
+-------------------------------------------------------------------------------
+Start experiment date and time: 07 March 2013 15:07
+script: d10v.psy
+executable: /home/yslin/Documents/Experiments/study4/FixedVsVariedUcOnly/d10v
+PsyToolkit: 1.2.7
+Resolution: 1152 864
+Fullscreen mode | Vsync: Yes | Realtime: No
+End experiment date and time:
+07 March 2013 15:40
+script:
+d10v.psy
+executable:
+/home/yslin/Documents/Experiments/study4/FixedVsVariedUcOnly/d10v
+-------------------------------------------------------------------------------
+Start experiment date and time: 14 March 2013 15:10
+script: d10c.psy
+executable: /home/yslin/Documents/Experiments/study4/FixedVsVariedUcOnly/d10c
+PsyToolkit: 1.2.7
+Resolution: 1152 864
+Fullscreen mode | Vsync: Yes | Realtime: No
+End experiment date and time:
+14 March 2013 15:39
+script:
+d10c.psy
+executable:
+/home/yslin/Documents/Experiments/study4/FixedVsVariedUcOnly/d10c
