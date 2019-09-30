@@ -6,9 +6,9 @@
 ## License: GPL 2
 ## Description: 1. 
 rm( list = ls() )
-setwd("~/Documents/Fixed-Cue-vs-Varied-Cue/")
+setwd("~/Documents/Attention-Guidance-Visual-Search/")
 require(ggdmc) ## version 0.2.6.8
-load("data/alldata.RData")
+load("data/visual_search.RData")
 
 dplyr::tbl_df(e2)
 e2$R <- factor( ifelse(e2$R == "L", "left", ifelse(e2$R == "R", "right", NA)))
@@ -70,10 +70,7 @@ hpriors0 <- list(pprior=p.prior0, location=mu.prior0, scale=sigma.prior0)
 # hfit0 <- run(hfit0, thin=2)
 # Start sampling: 100 200 300 400 500 
 # save(hfit0, hburnin0, e2, dmi0, hpriors0, file = "data/e2hfit0.RData")
-
-plot(hfit0, hyper = TRUE)
-plot(hfit0)
-hgelman(hfit0)
+# hgelman(hfit0)
 # hyper   10     3     18    20    14     7    21    13    16    12    19   
 # 1.21  1.04  1.04   1.05  1.05  1.05  1.06  1.06  1.06  1.06  1.06  1.07
 #    8   17     4     9    11    23    15 
@@ -124,15 +121,13 @@ hpriors1 <- list(pprior=p.prior1, location=mu.prior1, scale=sigma.prior1)
 
 # hburnin1 <- StartNewsamples(data=dmi1, prior=hpriors1)
 # hfit1 <- run(hburnin1)
-# save(hfit1, hburnin1, fit1, burnin1, e2, dmi1, priors1, hpriors1,
-#      file = "data/e2hfit1.RData")
-rhat0 <- hgelman(hfit1)
+# save(hfit1, hburnin1, e2, dmi1, priors1, hpriors1,
+#      file = "data/modelling_data/e2hfit1.RData")
+# rhat0 <- hgelman(hfit1)
 # hyper   18    19    16    20    12     7    14     5    13    15    10    21      
 # 1.09  1.04  1.06  1.07  1.07  1.07  1.08  1.08  1.08  1.08  1.09  1.09  1.09   
 # 8      17     3     9    23    11     4 
 # 1.09 1.10  1.10  1.10  1.12  1.14  1.15 
-plot(hfit1, hyper=TRUE)
-plot(hfit1)
 
 ## SS Model -------------
 ## v-c(SS)
@@ -140,7 +135,6 @@ plot(hfit1)
 ## display size effect. It posits that neither Q nor I factor plays any role in
 ## influencing the drift rate. That is, the target-repetition procedure
 ## does not alter how one represents the attentional template.
-load("data/e2hfit2.RData")
 model2 <- BuildModel(
   p.map     = list(a = "1", v = c("SS"), z = "1", d = "1", sz = "1",
                    sv = "1", t0 = "1", st0 = "1"),
@@ -177,23 +171,19 @@ hpriors2 <- list(pprior=p.prior2, location=mu.prior2, scale=sigma.prior2)
  
 # hburnin2 <- StartNewsamples(data=dmi2, prior=hpriors2)
 # hfit2 <- run(hburnin2)
-# save(hfit2, hburnin2, fit2, burnin2, e2, dmi2, priors2, hpriors2,
-#      file = "data/e2hfit2.RData")
-rhat0 <- hgelman(hfit2)
+# save(hfit2, hburnin2, e2, dmi2, priors2, hpriors2, 
+#      file = "data/modelling_data/e2hfit2.RData")
+# rhat0 <- hgelman(hfit2)
 # hyper   10    16    13    18    20    19    15    14     3     9    17    21      
 # 1.06  1.03  1.04  1.04  1.04  1.04  1.05  1.05  1.06  1.06  1.06  1.06  1.06   
 #    7    5    12     8     4    11    23 
 # 1.07 1.07  1.08  1.08  1.09  1.09  1.11 
-plot(hfit2, hyper = TRUE)
-plot(hfit2)
-
-
 
 
 ## Compare models ----------
-load("data/e2hfit0.RData")
-load("data/e2hfit1.RData")
-load("data/e2hfit2.RData")
+load("data/modelling_data/e2hfit0.RData")
+load("data/modelling_data/e2hfit1.RData")
+load("data/modelling_data/e2hfit2.RData")
 
 dev0 <- DIC(hfit0, BPIC = TRUE)
 dev1 <- DIC(hfit1, BPIC = TRUE)

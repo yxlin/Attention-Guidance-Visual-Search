@@ -6,9 +6,8 @@
 ## License: GPL 2
 ## Description: 1. 
 rm( list = ls() )
-## setwd("C:/Users/yslin/Documents/Fixed-Cue-vs-Varied-Cue/")
-setwd("~/Documents/Fixed-Cue-vs-Varied-Cue/")
-load("data/alldata.RData")
+setwd("~/Documents/Attention-Guidance-Visual-Search/")
+load("data/visual_search.RData")
 require(ggdmc) ## version 0.2.6.8
 
 dplyr::tbl_df(e3)
@@ -71,8 +70,8 @@ hpriors0 <- list(pprior=p.prior0, location=mu.prior0, scale=sigma.prior0)
 
 # hburnin0 <- StartNewsamples(data=dmi0, prior=hpriors0)
 # hfit0 <- run(hburnin0)
-# save(hfit0, hburnin0, fit0, burnin0, e2, dmi0, priors0, hpriors0,
-#      file = "data/e3hfit0.RData")
+# save(hfit0, hburnin0, e3, dmi0, priors0, hpriors0,
+#      file = "data/modelling_data/e3hfit0.RData")
 load("data/e3hfit0.RData")
 rhat0 <- hgelman(hfit0)
 # hyper   26    30    36    27    32    40    41    39    31    43    37    24    
@@ -126,17 +125,13 @@ hpriors1 <- list(pprior=p.prior1, location=mu.prior1, scale=sigma.prior1)
 
 # hburnin1 <- StartNewsamples(data=dmi1, prior=hpriors1)
 # hfit1 <- run(hburnin1)
-# save(hfit1, hburnin1, fit1, burnin1, e3, dmi1, priors1, hpriors1,
-#      file = "data/e3hfit1.RData")
-
-load("data/e3hfit1.RData")
-rhat0 <- hgelman(hfit1)
+# save(hfit1, hburnin1, e3, dmi1, priors1, hpriors1,
+#      file = "data/modelling_data/e3hfit1.RData")
+# rhat0 <- hgelman(hfit1)
 # hyper    39    30    27    36    31    26    32    24    33    37    49    40    
 # 1.04  1.02  1.03  1.03  1.03  1.04  1.04  1.04  1.04  1.04  1.04  1.05  1.05   
 # 41     46    45    43    34    42    47    38 
 # 1.05 1.06  1.06  1.06  1.06  1.08  1.08  1.25 
-plot(hfit1, hyper=TRUE)
-plot(hfit1)
 
 ## SS Model -------------
 ## v-c(SS) 
@@ -182,25 +177,17 @@ hpriors2 <- list(pprior=p.prior2, location=mu.prior2, scale=sigma.prior2)
 
 # hburnin2 <- StartNewsamples(data=dmi2, prior=hpriors2)
 # hfit2 <- run(hburnin2)
-# save(hfit2, hburnin2, e3, dmi2, hpriors2, file = "data/e3hfit2.RData")
-
-
-load("data/e3hfit2.RData")
-rhat0 <- hgelman(hfit2)
+# save(hfit2, hburnin2, e3, dmi2, hpriors2, file = "data/modelling_data/e3hfit2.RData")
+# rhat0 <- hgelman(hfit2)
 # hyper   27    45    49    36    40    41    37    32    30    39    38    24    
 # 1.05  1.04  1.04  1.05  1.05  1.06  1.06  1.06  1.06  1.06  1.07  1.07  1.08  
 # 31     33    26    46    34    42    43    47 
 # 1.08 1.08  1.09  1.11  1.13  1.14  1.17  1.21 
 
-plot(hfit2, hyper=TRUE)
-plot(hfit2)
-plot(hfit2, hyper=TRUE, pll=FALSE, den=TRUE)
-
-
 ## Compare models ----------
-load("data/e3hfit0.RData")
-load("data/e3hfit1.RData")
-load("data/e3hfit2.RData")
+load("data/modelling_data/e3hfit0.RData")
+load("data/modelling_data/e3hfit1.RData")
+load("data/modelling_data/e3hfit2.RData")
 dev0 <- DIC(hfit0, BPIC = TRUE)
 dev1 <- DIC(hfit1, BPIC = TRUE)
 dev2 <- DIC(hfit2, BPIC = TRUE)

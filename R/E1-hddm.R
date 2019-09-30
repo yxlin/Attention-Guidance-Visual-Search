@@ -6,9 +6,9 @@
 ## License: GPL 2
 ## Description: 1. 
 rm( list = ls() )
-setwd("~/Documents/Fixed-Cue-vs-Varied-Cue/")
+setwd("~/Documents/Attention-Guidance-Visual-Search/")
 require(ggdmc) ## version 0.2.6.8
-load("data/alldata.RData")
+load("data/visual_search.RData")
 
 dplyr::tbl_df(e1)
 e1$R <- factor( ifelse(e1$R == "L", "left", ifelse(e1$R == "R", "right", NA)))
@@ -65,16 +65,15 @@ names(sigma.prior1) <- GetPNames(model1)
 hpriors1 <- list(pprior=p.prior1, location=mu.prior1, scale=sigma.prior1)
 
 ## 10 mins
-hburnin1 <- StartNewsamples(data=dmi1, prior=hpriors1, thin=2)
-save(hburnin1, e1, dmi1, hpriors1,
-     file = "data/e1hfit1.RData")
-## 27.6 mins
-hfit1 <- run(hburnin1, thin=2)
-save(hfit1, hburnin1, e1, dmi1, hpriors1, file = "data/e1hfit1.RData")
-rhat0 <- hgelman(hfit1)
+# hburnin1 <- StartNewsamples(data=dmi1, prior=hpriors1, thin=2)
+# hfit1 <- run(hburnin1, thin=2)
+# save(hfit1, hburnin1, e1, dmi1, hpriors1, file = "data/modelling_data/e1hfit1.RData")
+# rhat0 <- hgelman(hfit1)
+# hyper    18     5    15    11     2    16     9    12    14     1     8     6     
+# 1.05  1.03  1.04  1.04  1.04  1.04  1.05  1.05  1.05  1.05  1.05  1.06  1.06   
+#    7   10    13    17    20    19     3     4 
+# 1.06 1.07  1.07  1.07  1.08  1.09  1.09  1.19 
 
-# plot(hfit1, hyper=TRUE)
-# plot(hfit1)
 
 ## SS Model -------------
 ## v-c(SS)
@@ -117,16 +116,22 @@ sigma.prior2 <- BuildPrior(
 names(sigma.prior2) <- GetPNames(model2)
 hpriors2 <- list(pprior=p.prior2, location=mu.prior2, scale=sigma.prior2)
 
+# hburnin2 <- StartNewsamples(data=dmi2, prior=hpriors2, thin=2)
+# hfit2 <- run(hburnin2, thin=2)
+# save(hfit2, hburnin2, e1, dmi2, hpriors2, file = "data/modelling_data/e1hfit2.RData")
+# rhat0 <- hgelman(hfit2)
+# hyper    11     9    10     1    18    16    12     8    13    15     5     3     
+# 1.05   1.02  1.02  1.02  1.02  1.03  1.03  1.03  1.03  1.04  1.04  1.04  1.04   
+# 6      14    17    20     2    19     7     4 
+# 1.05 1.05  1.06  1.06  1.06  1.10  1.11  1.21 
 
-hburnin2 <- StartNewsamples(data=dmi2, prior=hpriors2, thin=2)
-save(hburnin2, e1, dmi2, hpriors2, file = "data/e1hfit2.RData")
-hfit2 <- run(hburnin2, thin=2)
-save(hfit2, hburnin2, e1, dmi2, hpriors2, file = "data/e1hfit2.RData")
-
-rhat0 <- hgelman(hfit2)
-# plot(hfit2, hyper = TRUE)
-# plot(hfit2)
-
-
-
+## Model comparison ------------------------
+load("data/modelling_data/e1hfit1.RData")
+load("data/modelling_data/e1hfit2.RData")
+plot(hfit1, hyper=TRUE)
+plot(hfit1)
+plot(hfit2, hyper = TRUE)
+plot(hfit2)
+dev1 <- DIC(hfit1, BPIC=TRUE)
+dev2 <- DIC(hfit2, BPIC=TRUE)
 
