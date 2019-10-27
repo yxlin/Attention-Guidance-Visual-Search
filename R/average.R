@@ -3,13 +3,14 @@
 ## Version: 0.0.3
 ## Authors: Yi-Shin Lin (yishinlin001@gmail.com)
 ## Date: 01 Oct, 2018 -- Draft one
+##       27 Oct, 2019 -- reorganize the script for reading   
 ## License: GPL 2
 ## Description: 1. 
 rm(list = ls())
-setwd("~/Documents/Attention-Guidance-Visual-Search/")
-## setwd("C:/Users/user/Documents/Attention-Guidance-Visual-Search/")
+## setwd("D:/Documents/Attention-Guidance-Visual-Search")
+setwd("/media/yslin/MERLIN/Documents/Attention-Guidance-Visual-Search/")
 loadedPackages <-c("plyr", "fBasics", "plotrix", "car", "afex",
-                   "reshape2", "ggplot2", "grid", "data.table")
+                   "reshape2", "ggplot2", "grid", "data.table", "effsize")
 sapply(loadedPackages, require, character.only=TRUE)
 source("R/functions/summarise.R")
 load("data/visual_search.RData")
@@ -20,7 +21,7 @@ d[, .N, .(E, I, Q, SS, s)]
 d[, .N, .(s)]
 
 ## E1, per-condition trial:
-## ns = 20; n trial = 130
+## ns = 20; n trial ~= 130
 d[E == "E1", .N, .(I, Q, SS, s)]
 ns(d, "E1")
 
@@ -42,8 +43,9 @@ dplyr::tbl_df(allexp)
 ## Search slope ------------
 res <- d[, .(value = get.slope(RT, ss)), .(E, C, I, Q, s)]
 res <- res[!is.na(value)]
-crs <- res[C==T]
-ers <- res[C==F]
+
+crs <- res[C==T]  ## correct responses
+ers <- res[C==F]  ## error responses
 slopea <- aov_ez("s", "value", crs[I=="50"], between = "E", within = c("Q"))
 slope1 <- aov_ez("s", "value", crs[E=="E1"], within = c("Q"))
 slope2 <- aov_ez("s", "value", crs[E=="E2"], within = c("Q", "I"))
@@ -52,23 +54,22 @@ nice(slopea, correction = "GG", es = "pes")
 nice(slope1, correction = "GG", es = "pes")
 nice(slope2, correction = "GG", es = "pes")
 nice(slope3, correction = "GG", es = "pes")
-# Response: all three experiments
-#   Effect    df  MSE       F  pes p.value
-# 1      E 2, 56 0.00    5.35  .16    .008 **
-# 2      Q 1, 56 0.00    0.74  .01     .39
-# 3    E:Q 2, 56 0.00    5.32  .16    .008 **
-# ----------------------------------------- Response: E1 slope
-# 1      Q 1, 19 0.00   7.55    .28     .01 *
-# ----------------------------------------- Response: E2 slope 
-# 1      Q 1, 18 0.00    9.12   .34    .007 **
-# 2      I 1, 18 0.00    1.04   .05     .32
-# 3    Q:I 1, 18 0.00    0.57   .03     .46
-# ----------------------------------------- Response: E3 slope
-# 1      Q 1, 19 0.00   1.07    .05     .31
-# 2      I 1, 19 0.00   1.43    .07     .25
-# 3    Q:I 1, 19 0.00   3.33    .15     .08 +
-# ---
+##   Effect    df  MSE       F  pes p.value
+## 1      E 2, 56 0.00    5.35  .16    .008 **
+## 2      Q 1, 56 0.00    0.74  .01     .39
+## 3    E:Q 2, 56 0.00    5.32  .16    .008 **
+## ----------------------------------------- Response: E1 slope
+## 1      Q 1, 19 0.00   7.55    .28     .01 *
+## ----------------------------------------- Response: E2 slope 
+## 1      Q 1, 18 0.00    9.12   .34    .007 **
+## 2      I 1, 18 0.00    1.04   .05     .32
+## 3    Q:I 1, 18 0.00    0.57   .03     .46
+## ----------------------------------------- Response: E3 slope
+## 1      Q 1, 19 0.00   1.07    .05     .31
+## 2      I 1, 19 0.00   1.43    .07     .25
+## 3    Q:I 1, 19 0.00   3.33    .15     .08 +
 
+## E1 only has one ISI (==50 ms)
 (slope.effect <- summarySEwithin(dplyr::tbl_df(crs[I=='50' & E =='E1']), 
                             measurevar = 'value', 
                             withinvar   =c('Q'), 
@@ -77,9 +78,6 @@ nice(slope3, correction = "GG", es = "pes")
 #   Q  N      value          sd          se          ci
 # 1 F 20 0.03240150 0.005300561 0.001185242 0.002480739
 # 2 V 20 0.03700806 0.005300561 0.001185242 0.002480739
-
-slope2.tmp <- aov_ez("s", "value", crs[E=="E2" & I == '50'], within = c('Q'))
-nice(slope2.tmp, correction = "GG", es = "pes")
 
 (slope.effect <- summarySEwithin(dplyr::tbl_df(crs[E =='E2']), 
                                  measurevar = 'value', 
@@ -96,7 +94,9 @@ nice(slope2.tmp, correction = "GG", es = "pes")
                                  withinvar   =c('Q'), 
                                  idvar='s', 
                                  na.rm = FALSE, conf.interval = .95, .drop=TRUE))
-
+# Q  N      value          sd          se          ci
+# 1 F 38 0.04981518 0.007628477 0.001237502 0.002507418
+# 2 V 38 0.04407015 0.007407823 0.001201708 0.002434891
 
 (slope.effect <- summarySEwithin(dplyr::tbl_df(crs[E =='E3']), 
                                  measurevar = 'value', 
@@ -108,11 +108,21 @@ nice(slope2.tmp, correction = "GG", es = "pes")
 # 2 F 400 20 0.03322775 0.003595636 0.0008040086 0.001682809
 # 3 V  50 20 0.03206182 0.004923777 0.0011009899 0.002304398
 # 4 V 400 20 0.03242046 0.005807034 0.0012984922 0.002717775
+(slope.effect <- summarySEwithin(dplyr::tbl_df(crs[E =='E3']), 
+                                 measurevar = 'value', 
+                                 withinvar   =c('Q'), 
+                                 idvar='s', 
+                                 na.rm = FALSE, conf.interval = .95, .drop=TRUE))
+#   Q  N      value          sd          se          ci
+# 1 F 40 0.03415382 0.006364855 0.001006372 0.002035579
+# 2 V 40 0.03224114 0.006513460 0.001029868 0.002083105
 
-## Avg across ----------
+## Plot 10%, 50% & 90% quantiles RT ----------
 mrt  <- d[, .(value = median(RT)), .(C, E, I, Q, SS, s)]
 q1rt <- d[, .(value = quantile(RT, .1)), .(C, E, I, Q, SS, s)]
 q9rt <- d[, .(value = quantile(RT, .9)), .(C, E, I, Q, SS, s)]
+
+## Separate correct and error responses
 crt <- mrt[C == TRUE]
 ert <- mrt[C != TRUE]
 cq1 <- q1rt[C == TRUE]
@@ -120,36 +130,15 @@ eq1 <- q1rt[C != TRUE]
 cq9 <- q9rt[C == TRUE]
 eq9 <- q9rt[C != TRUE]
 
-crt[E == "E1"]
-cq1[E == "E1"]
-cq9[E == "E1"]
-crt[E == "E2"]
-cq1[E == "E2"]
-cq9[E == "E2"]
-crt[E == "E3"]
-cq1[E == "E3"]
-cq9[E == "E3"]
-
-# 20*4*2
-# 19*3*2*2
-# 20*3*2*2
-
 pro <- d[, .N, .(C, E, I, Q, SS, s)]
 pro[, NN := sum(N), .(E, I, Q, SS, s)]
 pro[, value := N/NN]
 cp <- pro[C == TRUE] ## correct percentage
 ep <- pro[C != TRUE] ## error percentage
 
+## Show median RT  data frames
 dplyr::tbl_df(crt)
 dplyr::tbl_df(ert)
-
-
-(cvg <- summarySEwithin(dplyr::tbl_df(crt), 
-                        measurevar = 'value', 
-                        withinvar   =c('I', 'Q','SS'), 
-                        betweenvars = 'E',
-                        idvar='s', 
-                        na.rm = FALSE, conf.interval = .95, .drop=TRUE))
 
 (c1 <- summarySEwithin(dplyr::tbl_df(cq1), 
                         measurevar = 'value', 
@@ -157,50 +146,41 @@ dplyr::tbl_df(ert)
                         betweenvars = 'E',
                         idvar='s', 
                         na.rm = FALSE, conf.interval = .95, .drop=TRUE))
-
+(cvg <- summarySEwithin(dplyr::tbl_df(crt), 
+                        measurevar = 'value', 
+                        withinvar   =c('I', 'Q','SS'), 
+                        betweenvars = 'E',
+                        idvar='s', 
+                        na.rm = FALSE, conf.interval = .95, .drop=TRUE))
 (c9 <- summarySEwithin(dplyr::tbl_df(cq9), 
                         measurevar = 'value', 
                         withinvar   =c('I', 'Q','SS'), 
                         betweenvars = 'E',
                         idvar='s', 
                         na.rm = FALSE, conf.interval = .95, .drop=TRUE))
-
-(evg <- summarySEwithin(dplyr::tbl_df(ert), 
-                        measurevar = 'value', 
-                        withinvar  = c('I', 'Q','SS'), 
-                        betweenvar = 'E', 
-                        idvar      = 's', 
+## Accuracy averaged across participants
+(arg <- summarySEwithin(dplyr::tbl_df(cp),
+                        measurevar = 'value',
+                        withinvar  = c('I', 'Q','SS'),
+                        betweenvar = 'E',
+                        idvar      = 's',
                         na.rm      = FALSE, conf.interval=.95, .drop=TRUE))
 
-(arg <- summarySEwithin(dplyr::tbl_df(cp), 
-                        measurevar = 'value', 
-                        withinvar  = c('I', 'Q','SS'), 
-                        betweenvar = 'E', 
-                        idvar      = 's', 
-                        na.rm      = FALSE, conf.interval=.95, .drop=TRUE))
-
-(erg <- summarySEwithin(dplyr::tbl_df(ep), 
-                        measurevar = 'value', 
-                        withinvar  = c('I', 'Q','SS'), 
-                        betweenvar = 'E', 
-                        idvar      = 's', 
-                        na.rm      = FALSE, conf.interval=.95, .drop=TRUE))
-
-dplyr::tbl_df(cvg)
-dplyr::tbl_df(arg)
+dplyr::tbl_df(cvg) ## Median RT averaged across participants
+dplyr::tbl_df(arg) ## Accuracy averaged across participants
 cvg$P <- "50% RT"
 c1$P <- "10% RT"
 c9$P <- "90% RT"
-cvg$PN <- "Correct median RT (s)"
-c1$PN <- "Correct median RT (s)"
-c9$PN <- "Correct median RT (s)"
+cvg$PN <- "Median RT (s)"
+c1$PN <- "Median RT (s)"
+c9$PN <- "Median RT (s)"
 arg$PN <- "Accuracy" 
 arg$P <- "Accuracy" 
 gvg <- rbind(cvg, c1, c9, arg)
 
 textdf <- data.frame(x=c(4, 4, 4), y=c(.9, .58, .4), 
                      lab = c("90%", "50%", "10%"),
-                PN = rep("Correct median RT (s)", 3),
+                PN = rep("Median RT (s)", 3),
                 QI = c("F5010% RT", "F5050% RT", "F5090% RT"),
                 EI = rep("E1-50", 3) )
 
@@ -208,14 +188,17 @@ gvg$EI <- factor(paste(gvg$E, gvg$I, sep = "-"),
                  levels = c('E1-50', 'E2-50', 'E3-50', 'E2-400', 'E3-400'))
 gvg$QI <- paste0(gvg$Q, gvg$I, gvg$P)
 levels(gvg$EI)
+table(gvg$P)
 
-p <- ggplot(gvg, aes(x = SS, y = value, group = QI)) +
+df <- (gvg[gvg$P != "10% RT" & gvg$P != "90% RT", ])
+
+p <- ggplot(df, aes(x = SS, y = value, group = QI)) +
   geom_ribbon(aes(ymin = value-se, ymax = value+se, 
                   fill = Q, colour = Q), alpha=.2 ) + 
   geom_line(aes(colour = Q, linetype = Q), size=1.5) + 
   geom_point(aes(shape = Q, colour = Q), size=4) +
   facet_grid(PN ~ EI, scales="free_y", switch = "y") + 
-  geom_text(aes(x, y, label = lab), size=5.5, data = textdf) +
+  # geom_text(aes(x, y, label = lab), size=5.5, data = textdf) +
   theme_bw() +
   scale_x_discrete(name = "Display Size")+
   scale_colour_grey(start=.2, end=.7) +
@@ -234,15 +217,13 @@ p <- ggplot(gvg, aes(x = SS, y = value, group = QI)) +
         legend.text = element_text(size=26),
         legend.key.size = unit(2.0, "lines"),
         legend.key.width = unit(1.8, "cm"))
-
-
 # png(filename = "figs/beh.png", width = 1024, height = 768)
 print(p)
 # dev.off()
 
-## Anova E1, E2 & E3 CRT----
-dplyr::tbl_df(crt)
-dplyr::tbl_df(cp)
+## Conduct ANOVA E1, E2 & E3 CRT----
+dplyr::tbl_df(crt) ## correct median RTs 
+dplyr::tbl_df(cp)  ## correct proportions
 levels(crt$E)
 
 crt1 <- aov_ez("s", "value", crt[E == "E1"], within = c("Q", "SS"))
@@ -256,7 +237,7 @@ nice(crt1, correction = "GG", es = "pes")
 nice(acc1, correction = "GG", es = "pes")
 
 # E1 
-# Response: Correct median RTS and correct rates
+# Response: Median RTS of the correct responses and correct rates
 # Effect          df  MSE          F  pes p.value
 #      Q       1, 19 0.00       7.10  .27     .02 *
 #     SS 1.15, 21.88 0.00     158.86  .89  <.0001 ***
@@ -280,9 +261,11 @@ nice(acc1, correction = "GG", es = "pes")
 # E3 V 120  0.54 0.116 0.01059044 0.02097012
 
 round(qeffect$value, 2)
+
 diff(qeffect$value[1:2]) ## E1
 diff(qeffect$value[3:4]) ## E2
-diff(qeffect$value[5:6])
+diff(qeffect$value[5:6]) ## E3
+## Convert from seconds to milli-seconds
 (.560 - .537) * 1000
 (.574 - .523) * 1000
 
@@ -293,7 +276,7 @@ diff(qeffect$value[5:6])
                              idvar='s', 
                              na.rm = FALSE, conf.interval = .95, .drop=TRUE))
 round(sseffect$value, 2)
-
+## Median RTs Q and SS effects
 (qandss <- summarySEwithin(dplyr::tbl_df(crt), 
                             measurevar = 'value', 
                             withinvar   =c('Q', 'SS'), 
@@ -314,6 +297,7 @@ dqss[E == 'E1' & Q == 'V', 'value']
 
 t.test(value~Q, data = cp[E == "E1" & SS == '7'], paired = TRUE)
 t.test(value~Q, data = cp[E == "E1" & SS == '9'], paired = TRUE)
+## Accuracy Q and SS effects
 (qandss <- summarySEwithin(dplyr::tbl_df(cp[E == "E1" & SS == '9']), 
                            measurevar = 'value', 
                            withinvar   =c('Q', 'SS'), 
@@ -334,7 +318,7 @@ t.test(value~Q, data = cp[E == "E1" & SS == '9'], paired = TRUE)
 ## Experiment 2  ## 
 nice(crt2, correction = "GG", es = "pes")
 nice(acc2, correction = "GG", es = "pes")
-# Response: correct median RT and accuracy 
+# Response: Median RT of the correct responses
 #   Effect          df  MSE          F   pes p.value
 # 1      I       1, 18 0.00   10.23 **   .36    .005
 # 2      Q       1, 18 0.01   12.22 **   .40    .003
@@ -343,7 +327,7 @@ nice(acc2, correction = "GG", es = "pes")
 # 5   I:SS 1.64, 29.51 0.00       1.53   .08     .23
 # 6   Q:SS 1.40, 25.28 0.00    9.20 **   .34    .003
 # 7 I:Q:SS 1.40, 25.22 0.00       0.81   .04     .42
-# Response: value
+# Response: Accuracy
 #   Effect          df  MSE        F pes p.value
 # 1      I       1, 18 0.00     1.07 .06     .31
 # 2      Q       1, 18 0.00   7.71 * .30     .01
@@ -360,13 +344,43 @@ nice(acc2, correction = "GG", es = "pes")
                             idvar='s', 
                             na.rm = FALSE, conf.interval = .95, .drop=TRUE))
 
+## Simple effect at 50 and 400 ms ISI
+(res.50 <- summarySEwithin(dplyr::tbl_df(cp[E == "E2" & I == '50']), 
+                            measurevar = 'value', 
+                            withinvar  =c('s', 'Q'),
+                            idvar='s', 
+                            na.rm = FALSE, conf.interval = .95, .drop=TRUE))
+(res.400 <- summarySEwithin(dplyr::tbl_df(cp[E == "E2" & I == '400']), 
+                           measurevar = 'value', 
+                           withinvar  =c('s', 'Q'),
+                           idvar='s', 
+                           na.rm = FALSE, conf.interval = .95, .drop=TRUE))
+
+
+t1 <- t.test(value~Q, data = res.50, paired = TRUE)
+t2 <- t.test(value~Q, data = res.400, paired = TRUE)
+
+t1$conf.int
+t2$conf.int
+cohend1 <- effsize::cohen.d(value~Q, data=res.50, paired=TRUE)
+cohend2 <- effsize::cohen.d(value~Q, data=res.400, paired=TRUE)
+
+r1 <- c(t1$statistic, t1$p.value, t1$parameter, cohend1$estimate)
+r2 <- c(t2$statistic, t2$p.value, t2$parameter, cohend2$estimate)
+tmp <- rbind(r1, r2)
+rownames(tmp) <- c("50", "400")
+colnames(tmp) <- c("t", "p-value", "df", "Cohen's d")
+print(tmp)
+##             t     p-value df Cohen's d
+## 50  3.5515655 0.002279993 18  1.615991
+## 400 0.2760074 0.785686264 18  0.210195
 
 ## Experiment 3 ## 
 nice(crt3, correction = "GG", es = "pes")
 nice(acc3, correction = "GG", es = "pes")
 # E3 (Type 3 ANOVA tests)
 # 
-# Response: Correct mean RTs and accuracy
+# Response: Median RTs of the correct responses
 #  Effect          df  MSE          F pes p.value
 #      I       1, 19 0.00       6.08 .24     .02 *
 #      Q       1, 19 0.01       0.84 .04     .37
@@ -375,7 +389,7 @@ nice(acc3, correction = "GG", es = "pes")
 #   I:SS 1.68, 31.90 0.00       0.21 .01     .77
 #   Q:SS 1.43, 27.16 0.00       1.97 .09     .17
 # I:Q:SS 1.45, 27.61 0.00       1.91 .09     .17
-# ------------------------------------------------#
+# Accuracy------------------------------------------#
 #     I       1, 19  0.00      1.22  .06     .28
 #     Q       1, 19  0.00      4.30  .18     .05 +
 #    SS  1.29, 24.47 0.00     13.66  .42   .0005 ***
@@ -387,5 +401,3 @@ nice(acc3, correction = "GG", es = "pes")
 # ---
 # Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '+' 0.1 ' ' 1
 # Sphericity correction method: GG 
-
-## Next ez2.R 
